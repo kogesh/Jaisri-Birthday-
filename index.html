@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jaisri 🎂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div id="cursor-trail"></div>
+    <div id="cursor-dot"></div>
+    <div id="canvas-container"></div>
+
+    <!-- Music -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-toggle" id="music-btn" title="Toggle Music">
+        <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+    </button>
+
+    <!-- SECTION 1: ENTRY -->
+    <section id="entry" class="active">
+        <h1>Hey Jaisri 👀</h1>
+        <p>Konjam click pannalama? 🤭</p>
+        <button class="btn" onclick="nextSection('intro')">Open pannalama 💫</button>
+    </section>
+
+    <!-- SECTION 2: INTRO -->
+    <section id="intro">
+        <div class="typing-container" id="typing-text"></div>
+        <button class="btn" id="intro-btn" style="display: none;" onclick="nextSection('story')">Scroll pannalama 👀</button>
+    </section>
+
+    <!-- SECTION 3: STORY -->
+    <section id="story">
+        <p class="fade-in">Some people just enter life...</p>
+        <p class="fade-in">and become important without asking...</p>
+        <h2 class="fade-in">Nee apdi oru person da Jaisri 😌</h2>
+        <button class="btn" onclick="nextSection('letter')">Innum konjam 😌</button>
+    </section>
+
+    <!-- SECTION 4: LETTER (SCROLL) -->
+    <section id="letter">
+        <div class="scroll-wrapper" id="scroll-wrapper">
+            <h2 class="scroll-heading" id="scroll-heading">Unakku oru sirappana ezhuthu 👑</h2>
+            <div class="scroll-container">
+                <div class="scroll-roller top"></div>
+                <div class="scroll-paper" id="scroll-paper">
+                    <div class="scroll-content" id="scroll-letter-text">
+                        <!-- Text will be typed here -->
+                    </div>
+                </div>
+                <div class="scroll-roller bottom"></div>
+            </div>
+        </div>
+        
+        <div id="scroll-trigger-container">
+            <button class="btn" onclick="openScroll()">Open pannalama 📜</button>
+        </div>
+
+        <button class="btn" id="after-scroll-btn" style="display: none; margin-top: 3rem;" onclick="nextSection('special')">Last ah oru click pannalama?</button>
+    </section>
+
+    <!-- SECTION 5: WHY SPECIAL -->
+    <section id="special">
+        <h2>Why you are special...</h2>
+        <ul class="special-list">
+            <li class="special-item">Un smile 😌</li>
+            <li class="special-item">Un attitude 🤭</li>
+            <li class="special-item">Un care 💯</li>
+            <li class="special-item">Un presence 💙</li>
+            <li class="special-item">Un vibe ✨</li>
+        </ul>
+        <button class="btn" id="final-trigger" style="display: none;" onclick="nextSection('final')">Click Me! 🎁</button>
+    </section>
+
+    <!-- SECTION 6: FINAL -->
+    <section id="final">
+        <div id="cinematic-flash"></div>
+        <div class="vignette"></div>
+        <div class="final-card" id="final-card">
+            <h1 class="final-text" id="final-title">
+                HAPPY BIRTHDAY <br>
+                <span class="name-highlight" id="name-span">JAISRI</span> <br>
+                🎂💫
+            </h1>
+            
+            <div class="quote-container">
+                <span class="quote-line" id="q1">“Indha ulagathil pala per pirakkiraanga…</span>
+                <span class="quote-line" id="q2">Aana sila per dhaan ninaivaga irukkiraanga…</span>
+                <span class="quote-line" id="q3">Nee… andha sila per la oruthi 👑💜”</span>
+            </div>
+
+            <p class="final-small-line" id="final-small">Idha padichitu enna feel nu sollu… naan wait panren 😌</p>
+        </div>
+        <div class="footer-note">Open pannadhuku thanks 😌</div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
